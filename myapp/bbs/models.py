@@ -1,9 +1,10 @@
 from django.db import models
 from django.urls import reverse
+from mdeditor.fields import MDTextField # 追加
  
 class Article(models.Model):
     title = models.CharField(max_length = 200)
-    content = models.TextField(max_length=1000)
+    content = MDTextField(max_length=1000) # 変更
  
     author = models.ForeignKey(
         'auth.User',

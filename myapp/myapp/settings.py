@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mdeditor', # 追加
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
+
+# これはDjangoバージョン3.0以上の場合のみ記載すること
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+ 
+# ファイルアップロード用
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/media/'

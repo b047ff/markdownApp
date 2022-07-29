@@ -8,7 +8,9 @@
     {% csrf_token %}
     <p>タイトル：{{ form.title }}</p>
     <p>本文：<br>
+    {{ form.media }}
     {{ form.content }}</p>
+    
     <button type='submit' class='submit btn btn-outline-primary'>{{ object|yesno:'更新,作成'}}</button>
 </form>
 <div class="mt-3">
