@@ -22,4 +22,5 @@ urlpatterns = [
     path('index.html', RedirectView.as_view(url='/bbs/')),
     path('bbs/', include('bbs.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
