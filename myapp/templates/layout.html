@@ -14,6 +14,8 @@
             h6 {font-size: 100%;}
         </style>
         <title>Markdown掲示板</title>
+        <!-- highlight.js-->
+        <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
     </head>
     <body>
         <nav class='navbar navbar-expand-sm navbar-dark bg-dark fixed-top'>
@@ -33,7 +35,7 @@
                         <a href='{% url "login" %}' class='login nav-link'>ログイン</a>
                     </li>
                     <li class="nav-item">
-                        <a href='#' class='signup nav-link'>ユーザー登録</a>
+                        <a href='{% url "accounts:signup" %}' class='signup nav-link'>ユーザー登録</a>
                     </li>
                 {% endif %}
             </ul>
@@ -42,5 +44,11 @@
             {% block content %}
             {% endblock %}
         </div>
+
+        <!-- highlight.js-->
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+        <!-- highlight.js-->
+        <script>hljs.initHighlightingOnLoad();</script>
+    
     </body>
 </html>
